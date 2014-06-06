@@ -1,7 +1,1203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
-<?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ch.bti7055p.controllers.MainController">
-	<!-- TODO Add Nodes -->
-</BorderPane>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="680.0" prefWidth="680.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bti7055p.controllers.MainController">
+	<children>
+		<Pane prefHeight="681.0" prefWidth="690.0">
+			<children>
+				<MenuBar fx:id="menuBar" layoutX="14.0" layoutY="14.0">
+					<menus>
+						<Menu fx:id="mnuFile" mnemonicParsing="false" text="%mnuFile">
+							<items>
+								<MenuItem id="mnuFile" fx:id="mItemClose" mnemonicParsing="false" onAction="#close" text="Close" />
+							</items>
+						</Menu>
+						<Menu fx:id="mnuSetting" mnemonicParsing="false" text="Settings">
+							<items>
+								<MenuItem fx:id="mItemDE" mnemonicParsing="false" text="Deutsch" />
+								<MenuItem fx:id="mItemEN" mnemonicParsing="false" text="English" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<HBox fx:id="boxContent" layoutX="14.0" layoutY="52.0" prefHeight="517.0" prefWidth="587.0">
+					<children>
+						<TabPane prefHeight="517.0" prefWidth="582.0" tabClosingPolicy="UNAVAILABLE">
+							<tabs>
+								<Tab id="tabSettings" fx:id="tabSettings" text="Settings">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="218.0">
+											<children>
+												<VBox prefHeight="188.0" prefWidth="559.0" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+													<children>
+														<HBox prefHeight="25.0" prefWidth="571.0">
+															<children>
+																<Label id="lblInfoSet" fx:id="lblInfoSet" text="XSD file for validation: " />
+																<TextField fx:id="txtSourceSet">
+																	<HBox.margin>
+																		<Insets left="56.0" />
+																	</HBox.margin>
+																</TextField>
+																<Button fx:id="btnSearchSet" mnemonicParsing="false" onAction="#searchXSD" text="Search XSD file">
+																	<HBox.margin>
+																		<Insets left="20.0" />
+																	</HBox.margin>
+																</Button>
+																<Button fx:id="btnActSet" mnemonicParsing="false" onAction="#actXSD" text="Activate">
+																	<HBox.margin>
+																		<Insets left="22.0" />
+																	</HBox.margin>
+																</Button>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblWinningNumbers" fx:id="lblWinningNumbers" text="Current winning numbers: " />
+																<TextField fx:id="txtWnr1" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="23.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtWnr2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtWnr3" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtWnr4" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtWnr5" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+															<VBox.margin>
+																<Insets top="20.0" />
+															</VBox.margin>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblWinningSuperStar" fx:id="lblWinningSuperStar" text="Current winning Superstar: " />
+																<TextField fx:id="txtWST" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="19.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblWinningStarNumbers" fx:id="lblWinningStarNumbers" text="Current winning star numbers: " />
+																<TextField fx:id="txtWSnr1" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtWSnr2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="43.0" prefWidth="571.0">
+															<children>
+																<Label id="lblEvalDay" fx:id="lblEvalDay" text="Evaluation day: " />
+																<TextField fx:id="txtEvalDay" />
+															</children>
+														</HBox>
+													</children>
+												</VBox>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab fx:id="tabSingle" text="Single Drawing">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+											<children>
+												<VBox prefHeight="490.0" prefWidth="571.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+													<children>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																<TextField fx:id="txtValSuper" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="15.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																<TextField fx:id="txtValSnr" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																<TextField fx:id="txtvalNr" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="28.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblCurWS" fx:id="lblCurWS" text="Current winning Superstar: " />
+																<TextField fx:id="txtCurWS" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="19.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+															<VBox.margin>
+																<Insets top="10.0" />
+															</VBox.margin>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblCurrWinSNr" fx:id="lblCurrWinSNr" text="Current winning star numbers: " />
+																<TextField fx:id="txtCurWS1" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtCurWS2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="560.0">
+															<children>
+																<Label id="lblCurrWinNr" fx:id="lblCurrWinNr" text="Current winning numbers: " />
+																<TextField fx:id="txtCurWinNr1" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="23.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr3" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr4" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr5" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																<TextField fx:id="txtYSS1" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="19.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYSS2" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYSS3" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYSS4" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+															<VBox.margin>
+																<Insets top="10.0" />
+															</VBox.margin>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="560.0">
+															<children>
+																<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																<TextField fx:id="txtYSN1" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtYSN2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="560.0">
+															<children>
+																<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																<TextField fx:id="txtYnr1" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="23.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYnr2" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYnr3" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYnr4" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtYnr5" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblEvalSing" fx:id="lblEvalSing" text="Single XML file for evaluation" />
+																<TextField fx:id="txtSourceSing">
+																	<HBox.margin>
+																		<Insets left="22.0" />
+																	</HBox.margin>
+																</TextField>
+																<Button id="btnSearchSing" fx:id="btnSearchSing" mnemonicParsing="false" onAction="#searchXML" text="Search XML file">
+																	<HBox.margin>
+																		<Insets left="20.0" />
+																	</HBox.margin>
+																</Button>
+																<Button id="btnEvalSing" fx:id="btnEvalSing" mnemonicParsing="false" onAction="#evalXML" text="Evaluate">
+																	<HBox.margin>
+																		<Insets left="20.0" />
+																	</HBox.margin>
+																</Button>
+															</children>
+															<VBox.margin>
+																<Insets top="20.0" />
+															</VBox.margin>
+														</HBox>
+													</children>
+												</VBox>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab fx:id="tabMultiple" text="Multiple Drawings">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="571.0">
+											<children>
+												<VBox prefHeight="490.0" prefWidth="571.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+													<children>
+														<HBox prefHeight="30.0" prefWidth="571.0">
+															<children>
+																<Label id="lblEvalMul" fx:id="lblEvalMul" text="Multiple XML file for evaluation: " />
+																<TextField fx:id="txtSourceMul">
+																	<HBox.margin>
+																		<Insets left="5.0" />
+																	</HBox.margin>
+																</TextField>
+																<Button id="btnSearchMul" fx:id="btnSearchMul" mnemonicParsing="false" onAction="#searchMultiXML" text="Search XML file">
+																	<HBox.margin>
+																		<Insets left="20.0" />
+																	</HBox.margin>
+																</Button>
+																<Button id="btnEvalMul" fx:id="btnEvalMul" mnemonicParsing="false" onAction="#evalMultiXML" text="Evaluate">
+																	<HBox.margin>
+																		<Insets left="20.0" />
+																	</HBox.margin>
+																</Button>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="559.0">
+															<children>
+																<Label id="lblCurWS" fx:id="lblCurWS" text="Current winning Superstar: " />
+																<TextField fx:id="txtCurWSM" prefHeight="25.0" prefWidth="81.0">
+																	<HBox.margin>
+																		<Insets left="19.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="560.0">
+															<children>
+																<Label id="lblCurrWinSNr" fx:id="lblCurrWinSNr" text="Current winning star numbers: " />
+																<TextField fx:id="txtCurWS1M" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtCurWS2M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="30.0" prefWidth="560.0">
+															<children>
+																<Label id="lblCurrWinNr" fx:id="lblCurrWinNr" text="Current winning numbers: " />
+																<TextField fx:id="txtCurWinNr1M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="23.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr2M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr3M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr4M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+																<TextField fx:id="txtCurWinNr5M" prefHeight="25.0" prefWidth="35.0">
+																	<HBox.margin>
+																		<Insets left="10.0" />
+																	</HBox.margin>
+																</TextField>
+															</children>
+														</HBox>
+														<HBox prefHeight="360.0" prefWidth="663.0">
+															<children>
+																<ChoiceBox fx:id="choiceBoxTicket" prefWidth="150.0" />
+																<TabPane fx:id="tpPaneDrawings" prefHeight="360.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+																	<tabs>
+																		<Tab fx:id="tpPlay1" text="Play 1">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSSP1" fx:id="lblValSSP1" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP1" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP1" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP1" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP1" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP1" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP1" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP1" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP1" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP1" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay2" text="Play 2">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP2" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP2" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP2" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP2" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP2" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP2" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP2" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP2" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP2" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay3" text="Play 3">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP3" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP3" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP3" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP3" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP3" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP3" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP3" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP3" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP3" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay4" text="Play 4">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP4" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP4" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP4" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP4" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP4" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP4" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP4" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP4" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP4" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay5" text="Play 5">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP5" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP5" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP5" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP5" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP5" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP5" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP5" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP5" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP5" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay6" text="Play 6">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP6" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP6" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP6" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP6" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP6" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP6" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP6" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP6" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP6" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																		<Tab fx:id="tpPlay7" text="Play 7">
+																			<content>
+																				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="498.0">
+																					<children>
+																						<VBox prefHeight="200.0" prefWidth="460.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+																							<children>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSuper" fx:id="lblValSuper" text="Valid Super Stars: " />
+																										<TextField fx:id="txtValSuperMP7" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="15.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValSnr" fx:id="lblValSnr" text="Valid Star numbers" />
+																										<TextField fx:id="txtValSNMP7" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="571.0">
+																									<children>
+																										<Label id="lblValNr" fx:id="lblValNr" text="Valid numbers: " />
+																										<TextField fx:id="txtValNrMP7" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="28.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="559.0">
+																									<children>
+																										<Label id="lblYSS" fx:id="lblYSS" text="Your Superstar: " />
+																										<TextField fx:id="txtYSS1MP7" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="19.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS2MP7" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS3MP7" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYSS4MP7" prefHeight="25.0" prefWidth="81.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																									<VBox.margin>
+																										<Insets top="20.0" />
+																									</VBox.margin>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYSN" fx:id="lblYSN" text="Your star numbers: " />
+																										<TextField fx:id="txtYSN1MP7" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																								<HBox prefHeight="30.0" prefWidth="560.0">
+																									<children>
+																										<Label id="lblYnr" fx:id="lblYnr" text="Your numbers: " />
+																										<TextField fx:id="txtYnr1MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="23.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr2MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr3MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr4MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																										<TextField fx:id="txtYnr5MP7" prefHeight="25.0" prefWidth="35.0">
+																											<HBox.margin>
+																												<Insets left="10.0" />
+																											</HBox.margin>
+																										</TextField>
+																									</children>
+																								</HBox>
+																							</children>
+																						</VBox>
+																					</children>
+																				</AnchorPane>
+																			</content>
+																		</Tab>
+																	</tabs>
+																	<padding>
+																		<Insets left="20.0" />
+																	</padding>
+																	<HBox.margin>
+																		<Insets left="-5.0" />
+																	</HBox.margin>
+																</TabPane>
+															</children>
+														</HBox>
+													</children>
+												</VBox>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+							</tabs>
+						</TabPane>
+					</children>
+				</HBox>
+				<HBox layoutX="14.0" layoutY="514.0" prefHeight="155.0" prefWidth="690.0">
+					<children>
+						<Label id="lblOpenXML" fx:id="lblOpenXML" text="blablabla: " />
+						<TextField id="txtOpenXML" fx:id="txtOpenXML">
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</TextField>
+					</children>
+				</HBox>
+			</children>
+		</Pane>
+	</children>
+</AnchorPane>
