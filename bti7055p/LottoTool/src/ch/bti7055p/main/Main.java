@@ -28,17 +28,6 @@ public class Main extends Application {
 	}
 }
 
-package application;
-
-import java.util.Locale;
-import java.util.ResourceBundle;
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.fxml.FXMLLoader;
-
-
 //public class Main extends Application {
 //	
 //	private static Locale locale = new Locale("de", "CH");
