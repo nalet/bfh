@@ -2,7 +2,6 @@ package ch.bti7055p.main;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.stage.PopupWindow.AnchorLocation;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
