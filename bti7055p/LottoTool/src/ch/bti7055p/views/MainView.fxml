@@ -18,8 +18,8 @@
 						</Menu>
 						<Menu fx:id="mnuSetting" mnemonicParsing="false" text="Settings">
 							<items>
-								<MenuItem fx:id="mItemDE" mnemonicParsing="false" text="Deutsch" />
-								<MenuItem fx:id="mItemEN" mnemonicParsing="false" text="English" />
+								<MenuItem id="mItemDE" fx:id="mItemDE" mnemonicParsing="false" onAction="#setDe" text="Deutsch" />
+								<MenuItem id="mItemEN" fx:id="mItemEN" mnemonicParsing="false" onAction="#setEn" text="English" />
 							</items>
 						</Menu>
 					</menus>
@@ -42,7 +42,7 @@
 																		<Insets left="56.0" />
 																	</HBox.margin>
 																</TextField>
-																<Button fx:id="btnSearchSet" mnemonicParsing="false" onAction="#searchXSD" text="Search XSD file">
+																<Button id="btnSearchXSD" fx:id="btnSearchXSD" mnemonicParsing="false" onAction="#searchXSD" text="Search XSD file">
 																	<HBox.margin>
 																		<Insets left="20.0" />
 																	</HBox.margin>
