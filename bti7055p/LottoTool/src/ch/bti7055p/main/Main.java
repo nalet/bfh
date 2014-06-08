@@ -12,16 +12,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	private static Locale locale = new Locale("en", "EN");
+	private static Locale locale = new Locale("de", "CH");
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {			
-			AnchorPane root = (AnchorPane)FXMLLoader.load(
-					Main.class.getResource("../views/MainView.fxml"),
+			AnchorPane root = (AnchorPane)FXMLLoader.load(Main.class.getResource("../views/MainView.fxml"),
 					ResourceBundle.getBundle("lang", locale));
 			
-			Scene scene = new Scene(root,600,600);
+			Scene scene = new Scene(root,700,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("LottoTool");
 			primaryStage.setResizable(false);
