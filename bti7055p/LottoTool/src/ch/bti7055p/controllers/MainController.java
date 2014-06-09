@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import ch.bti7055p.main.Main;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -18,16 +17,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
+import ch.bti7055p.main.Main;
 
-public final class MainController
-{	
+public final class MainController {
+
 	private List<I18NNodes> nodeList = new ArrayList<I18NNodes>();
-
-	@FXML
-	private AnchorPane anchorPane;
 	
 	@FXML
 	private ResourceBundle resources;
@@ -291,7 +287,7 @@ public final class MainController
 	private TextField txtValSuper;
 
 	@FXML
-	private Tab tpPlay4; 
+	private Tab tpPlay4;
 
 	@FXML
 	private TextField txtYSS4MP6;
@@ -301,7 +297,7 @@ public final class MainController
 
 	@FXML
 	private TextField txtYSS4MP7;
-	
+
 	@FXML
 	private TextField txtYSS4MP1;
 
@@ -345,7 +341,7 @@ public final class MainController
 	private TextField txtCurWinNr4;
 
 	@FXML
-	private TextField txtYnr1MP2; 
+	private TextField txtYnr1MP2;
 
 	@FXML
 	private TextField txtYnr1MP1;
@@ -403,7 +399,7 @@ public final class MainController
 
 	@FXML
 	private TextField txtYSS2MP5;
-	
+
 	@FXML
 	private TextField txtYSS2MP4;
 
@@ -417,7 +413,7 @@ public final class MainController
 	private Button btnSearchSing;
 
 	@FXML
-	private TextField txtYSS2MP1; 
+	private TextField txtYSS2MP1;
 
 	@FXML
 	private TextField txtYSS2MP3;
@@ -448,10 +444,10 @@ public final class MainController
 
 	@FXML
 	private TextField txtvalNr;
-	
+
 	@FXML
-	private TextField txtYnr5; 
-	
+	private TextField txtYnr5;
+
 	@FXML
 	private Label lblOpenXML;
 
@@ -465,7 +461,7 @@ public final class MainController
 	private Label lblWinningStarNumbers;
 
 	@FXML
-	private Label lblEvalMul; 
+	private Label lblEvalMul;
 
 	@FXML
 	private TextField txtYSS3MP5;
@@ -529,7 +525,7 @@ public final class MainController
 
 	@FXML
 	private TextField txtYSS4;
-	
+
 	@FXML
 	private TextField txtYnr2MP6;
 
@@ -558,8 +554,8 @@ public final class MainController
 	private TextField txtYSN2MP6;
 
 	@FXML
-	private TextField txtYSN2MP5; 
-	
+	private TextField txtYSN2MP5;
+
 	@FXML
 	private Label lblValNr;
 
@@ -568,144 +564,127 @@ public final class MainController
 
 	@FXML
 	private TextField txtCurWS2;
-	
+
 	@FXML
 	private Button btnDE;
-	
+
 	@FXML
 	private Button btnEN;
-	
+
 	@FXML
 	private Button btnClose;
 
 	@FXML
-	void close(ActionEvent event)
-	{
+	void close(ActionEvent event) {
 		Platform.exit();
 	}
-	
-   @FXML
-   void setDe(ActionEvent event) {
-   	Locale locale = new Locale("de", "CH");
-   	Helper.applyI18N("lang", locale, nodeList);
-   }
-
-   @FXML
-   void setEn(ActionEvent event) {
-   	Locale locale = new Locale("en", "EN");
-   	Helper.applyI18N("lang", locale, nodeList);
-   }
 
 	@FXML
-	void searchXSD(ActionEvent event)
-	{
+	void searchXSD(ActionEvent event) {
 
 	}
 
 	@FXML
-	void actXSD(ActionEvent event)
-	{
+	void actXSD(ActionEvent event) {
 
 	}
 
 	@FXML
-	void searchXML(ActionEvent event)
-	{
+	void searchXML(ActionEvent event) {
 
 	}
 
 	@FXML
-	void evalXML(ActionEvent event)
-	{
+	void evalXML(ActionEvent event) {
 
 	}
 
 	@FXML
-	void searchMultiXML(ActionEvent event)
-	{
+	void searchMultiXML(ActionEvent event) {
 
 	}
 
 	@FXML
-	void evalMultiXML(ActionEvent event)
-	{
+	void evalMultiXML(ActionEvent event) {
 
 	}
-	
+
 	// This method is called by the FXMLLoader when initialization is complete
-	void initialize()
-	{
-		
-		nodeList.add(new I18NNodes(btnClose,"btnClose"));
-		nodeList.add(new I18NNodes(btnDE,"btnDE"));
-		nodeList.add(new I18NNodes(btnEN,"btnEN"));
-//		nodeList.add(new I18NNodes(tabSettings,"tabSettings"));
-		nodeList.add(new I18NNodes(lblInfoSet,"lblInfoSet"));
-		nodeList.add(new I18NNodes(btnSearchXSD,"btnSearchXSD"));
-		nodeList.add(new I18NNodes(btnActSet,"btnActSet"));
-		nodeList.add(new I18NNodes(lblWinningNumbers,"lblWinningNumbers"));
-		nodeList.add(new I18NNodes(lblWinningSuperStar,"lblWinningSuperStar"));
-		nodeList.add(new I18NNodes(lblWinningStarNumbers,"lblWinningStarNumbers"));
-		nodeList.add(new I18NNodes(lblEvalDay,"lblEvalDay"));
-//		nodeList.add(new I18NNodes(tabSingle,"tabSingle"));
-		nodeList.add(new I18NNodes(lblValSuper,"lblValSuper"));
-		nodeList.add(new I18NNodes(lblValSnr,"lblValSnr"));
-		nodeList.add(new I18NNodes(lblValNr,"lblValNr"));
-		nodeList.add(new I18NNodes(lblCurWS,"lblCurWS"));
-		nodeList.add(new I18NNodes(lblCurrWinSNr,"lblCurrWinSNr"));
-		nodeList.add(new I18NNodes(lblCurrWinNr,"lblCurrWinNr"));
-		nodeList.add(new I18NNodes(lblYSS,"lblYSS"));
-		nodeList.add(new I18NNodes(lblYSN,"lblYSN"));
-		nodeList.add(new I18NNodes(lblYnr,"lblYnr"));
-		nodeList.add(new I18NNodes(lblEvalSing,"lblEvalSing"));
-		nodeList.add(new I18NNodes(btnSearchSing,"btnSearchSing"));
-		nodeList.add(new I18NNodes(btnEvalSing,"btnEvalSing"));
-//		nodeList.add(new I18NNodes(tabMultiple,"tabMultiple"));
-		nodeList.add(new I18NNodes(lblEvalMul,"lblEvalMul"));
-		nodeList.add(new I18NNodes(btnSearchMul,"btnSearchMul"));
-		nodeList.add(new I18NNodes(btnEvalMul,"btnEvalMul"));
-		nodeList.add(new I18NNodes(tpPaneDrawings,"tpPaneDrawings"));
-//		nodeList.add(new I18NNodes(tpPlay1,"tpPlay1"));
-//		nodeList.add(new I18NNodes(tpPlay2,"tpPlay2"));
-//		nodeList.add(new I18NNodes(tpPlay3,"tpPlay3"));
-//		nodeList.add(new I18NNodes(tpPlay4,"tpPlay4"));
-//		nodeList.add(new I18NNodes(tpPlay5,"tpPlay5"));
-//		nodeList.add(new I18NNodes(tpPlay6,"tpPlay6"));
-//		nodeList.add(new I18NNodes(tpPlay7,"tpPlay7"));
-		nodeList.add(new I18NNodes(lblOpenXML,"lblOpenXML"));
+	void initialize() {
 
-//		Locale locale = new Locale("en", "EN");
-//		Helper.applyI18N("lang", locale, nodeList);
+		nodeList.add(new I18NNodes(btnClose, "btnClose"));
+		nodeList.add(new I18NNodes(btnDE, "btnDE"));
+		nodeList.add(new I18NNodes(btnEN, "btnEN"));
+		// nodeList.add(new I18NNodes(tabSettings,"tabSettings"));
+		nodeList.add(new I18NNodes(lblInfoSet, "lblInfoSet"));
+		nodeList.add(new I18NNodes(btnSearchXSD, "btnSearchXSD"));
+		nodeList.add(new I18NNodes(btnActSet, "btnActSet"));
+		nodeList.add(new I18NNodes(lblWinningNumbers, "lblWinningNumbers"));
+		nodeList.add(new I18NNodes(lblWinningSuperStar, "lblWinningSuperStar"));
+		nodeList.add(new I18NNodes(lblWinningStarNumbers,
+				"lblWinningStarNumbers"));
+		nodeList.add(new I18NNodes(lblEvalDay, "lblEvalDay"));
+		// nodeList.add(new I18NNodes(tabSingle,"tabSingle"));
+		nodeList.add(new I18NNodes(lblValSuper, "lblValSuper"));
+		nodeList.add(new I18NNodes(lblValSnr, "lblValSnr"));
+		nodeList.add(new I18NNodes(lblValNr, "lblValNr"));
+		nodeList.add(new I18NNodes(lblCurWS, "lblCurWS"));
+		nodeList.add(new I18NNodes(lblCurrWinSNr, "lblCurrWinSNr"));
+		nodeList.add(new I18NNodes(lblCurrWinNr, "lblCurrWinNr"));
+		nodeList.add(new I18NNodes(lblYSS, "lblYSS"));
+		nodeList.add(new I18NNodes(lblYSN, "lblYSN"));
+		nodeList.add(new I18NNodes(lblYnr, "lblYnr"));
+		nodeList.add(new I18NNodes(lblEvalSing, "lblEvalSing"));
+		nodeList.add(new I18NNodes(btnSearchSing, "btnSearchSing"));
+		nodeList.add(new I18NNodes(btnEvalSing, "btnEvalSing"));
+		// nodeList.add(new I18NNodes(tabMultiple,"tabMultiple"));
+		nodeList.add(new I18NNodes(lblEvalMul, "lblEvalMul"));
+		nodeList.add(new I18NNodes(btnSearchMul, "btnSearchMul"));
+		nodeList.add(new I18NNodes(btnEvalMul, "btnEvalMul"));
+		nodeList.add(new I18NNodes(tpPaneDrawings, "tpPaneDrawings"));
+		// nodeList.add(new I18NNodes(tpPlay1,"tpPlay1"));
+		// nodeList.add(new I18NNodes(tpPlay2,"tpPlay2"));
+		// nodeList.add(new I18NNodes(tpPlay3,"tpPlay3"));
+		// nodeList.add(new I18NNodes(tpPlay4,"tpPlay4"));
+		// nodeList.add(new I18NNodes(tpPlay5,"tpPlay5"));
+		// nodeList.add(new I18NNodes(tpPlay6,"tpPlay6"));
+		// nodeList.add(new I18NNodes(tpPlay7,"tpPlay7"));
+		nodeList.add(new I18NNodes(lblOpenXML, "lblOpenXML"));
+
+		// Locale locale = new Locale("en", "EN");
+		// Helper.applyI18N("lang", locale, nodeList);
 
 	}
-	
+
 	@FXML
 	public void handleSearchXSD(Event e) {
-        FileChooser fileChooser = new FileChooser();
+		FileChooser fileChooser = new FileChooser();
 
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XSD files (*.xsd)", "*.xsd");
-        fileChooser.getExtensionFilters().add(extFilter);
-       
-        File file = fileChooser.showOpenDialog(null);
-        System.out.println(file);
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+				"XSD files (*.xsd)", "*.xsd");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		File file = fileChooser.showOpenDialog(null);
+		System.out.println(file);
 	}
-	
+
 	@FXML
 	public void handleSearchXML(Event e) {
-        FileChooser fileChooser = new FileChooser();
+		FileChooser fileChooser = new FileChooser();
 
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml");
-        fileChooser.getExtensionFilters().add(extFilter);
-       
-        File file = fileChooser.showOpenDialog(null);
-        System.out.println(file);
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+				"XML files (*.xml)", "*.xml");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		File file = fileChooser.showOpenDialog(null);
+		System.out.println(file);
 	}
-	
+
 	@FXML
 	public void handleSetDe(Event e) {
 		Main.instance.loadView(new Locale("de", "CH"));
 	}
-	
+
 	@FXML
 	public void handleSetEn(Event e) {
 		Main.instance.loadView(new Locale("en", "EN"));

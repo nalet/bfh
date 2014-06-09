@@ -16,6 +16,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+
 		Main.instance = this;
 		this.primaryStage = primaryStage;
 		try {
@@ -23,12 +24,14 @@ public class Main extends Application {
 			this.loadView(new Locale("de", "CH"));
 
 		} catch (Exception e) {
+
 			e.printStackTrace();
 		}
 
 	}
 
 	public static void main(String[] args) {
+
 		launch(args);
 	}
 
