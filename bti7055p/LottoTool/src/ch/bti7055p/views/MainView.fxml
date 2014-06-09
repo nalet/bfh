@@ -5,8 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="680.0" prefWidth="700.0" stylesheets="@../main/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-	 fx:controller="ch.bti7055p.controllers.MainController">
+<AnchorPane prefHeight="680.0" prefWidth="700.0" stylesheets="@../main/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bti7055p.controllers.MainController">
 	<children>
 		<Pane prefHeight="681.0" prefWidth="700.0">
 			<children>
@@ -373,8 +372,16 @@
 														</HBox>
 														<HBox prefHeight="360.0" prefWidth="663.0">
 															<children>
-																<ChoiceBox fx:id="choiceBoxTicket" prefWidth="150.0" />
-																<TabPane fx:id="tpPaneDrawings" prefHeight="360.0" prefWidth="653.0" tabClosingPolicy="UNAVAILABLE">
+                                                <ComboBox id="comboTickets" fx:id="comboTickets" prefHeight="25.0" prefWidth="105.0" promptText="%comboTickets">
+              	                                	<items>
+        												<FXCollections fx:factory="observableArrayList">
+          													<String fx:value="Item 1" />
+          													<String fx:value="Item 2" />
+          													<String fx:value="Item 3" />
+        												</FXCollections>
+      												</items>
+                                                </ComboBox>
+																<TabPane fx:id="tpPaneDrawings" prefHeight="360.0" prefWidth="458.0" tabClosingPolicy="UNAVAILABLE">
 																	<tabs>
 																		<Tab id="tpPlay1" fx:id="tpPlay1" text="%tpPlay1">
 																			<content>

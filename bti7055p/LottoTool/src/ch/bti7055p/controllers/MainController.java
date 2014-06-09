@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -371,7 +372,7 @@ public final class MainController
 	private TextField txtCurWSM;
 
 	@FXML
-	private ChoiceBox<?> choiceBoxTicket;
+	private ComboBox<String> comboTickets;
 
 	@FXML
 	private Button btnSearchMul;
@@ -631,6 +632,7 @@ public final class MainController
 	// This method is called by the FXMLLoader when initialization is complete
 	void initialize()
 	{
+		
 		nodeList.add(new I18NNodes(btnClose,"btnClose"));
 		nodeList.add(new I18NNodes(btnDE,"btnDE"));
 		nodeList.add(new I18NNodes(btnEN,"btnEN"));

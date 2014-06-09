@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	private static Locale locale = new Locale("en", "EN");
+	private static Locale locale = new Locale("de", "CH");
 	
 	@Override
 	public void start(Stage primaryStage) {
