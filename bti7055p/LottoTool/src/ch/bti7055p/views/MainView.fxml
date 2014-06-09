@@ -434,17 +434,12 @@
 														</HBox>
 														<HBox prefHeight="360.0" prefWidth="663.0">
 															<children>
-<<<<<<< HEAD
 																<ComboBox id="comboTickets" fx:id="comboTickets"
 																	prefHeight="25.0" prefWidth="105.0" promptText="%comboTickets">
 																</ComboBox>
 																<TabPane fx:id="tpPaneDrawings" prefHeight="360.0"
 																	prefWidth="458.0" tabClosingPolicy="UNAVAILABLE">
-=======
-                                                <ComboBox id="comboTickets" fx:id="comboTickets" prefHeight="25.0" prefWidth="105.0" promptText="%comboTickets">
-                                                </ComboBox>
-																<TabPane fx:id="tpPaneDrawings" prefHeight="360.0" prefWidth="458.0" tabClosingPolicy="UNAVAILABLE">
->>>>>>> branch 'master' of https://github.com/nalet/bfh.git
+
 																	<tabs>
 																		<Tab id="tpPlay1" fx:id="tpPlay1" text="%tpPlay1">
 																			<content>
