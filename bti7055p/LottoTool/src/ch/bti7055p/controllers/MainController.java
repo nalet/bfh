@@ -20,7 +20,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
-public class MainController
+public final class MainController
 {
 	
 	private List<I18NNodes> nodeList = new ArrayList<I18NNodes>();
@@ -668,20 +668,9 @@ public class MainController
 //		nodeList.add(new I18NNodes(tpPlay6,"tpPlay6"));
 //		nodeList.add(new I18NNodes(tpPlay7,"tpPlay7"));
 		nodeList.add(new I18NNodes(lblOpenXML,"lblOpenXML"));
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-		Locale locale = new Locale("en", "EN");
-		Helper.applyI18N("lang", locale, nodeList);
+
+//		Locale locale = new Locale("en", "EN");
+//		Helper.applyI18N("lang", locale, nodeList);
 
 	}
 }
