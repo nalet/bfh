@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-        xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
+        xmlns:ticketType="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticketType"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
+        targetNamespace="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticketType"
         elementFormDefault="qualified"
         >
 

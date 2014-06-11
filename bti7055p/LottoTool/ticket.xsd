@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-        xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
+        xmlns:ticketType="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticketType"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticket"
+        targetNamespace="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticket"
         elementFormDefault="qualified"
         >
 
     <xs:import
-            namespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
+            namespace="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticketType"
             schemaLocation="ticketType.xsd"/>
 
     <xs:element name="ticket">
@@ -21,4 +21,3 @@
     </xs:element>
 
 </xs:schema>
-Status API Training Shop Blog About

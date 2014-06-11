@@ -22,7 +22,7 @@
 														<HBox prefHeight="25.0" prefWidth="593.0">
 															<children>
 																<Label id="lblInfoSet" fx:id="lblInfoSet" text="%lblInfoSet" />
-																<TextField fx:id="txtSourceSet">
+																<TextField fx:id="txtSourceSet" editable="false">
 																	<HBox.margin>
 																		<Insets left="56.0" />
 																	</HBox.margin>
@@ -1176,8 +1176,8 @@
 				</HBox>
 				<HBox layoutX="14.0" layoutY="514.0" prefHeight="155.0" prefWidth="690.0">
 					<children>
-						<Label id="lblOpenXML" fx:id="lblOpenXML" text="%lblMessage" />
-						<TextField id="txtOpenXML" fx:id="txtOpenXML" prefHeight="25.0" prefWidth="599.0">
+						<Label id="lblMessage" fx:id="lblMessage" text="%lblMessage" />
+						<TextField id="txtMessage" fx:id="txtMessage" prefHeight="25.0" prefWidth="599.0" editable="false">
 							<HBox.margin>
 								<Insets left="10.0" />
 							</HBox.margin>

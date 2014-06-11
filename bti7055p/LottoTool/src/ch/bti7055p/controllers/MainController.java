@@ -524,37 +524,22 @@ public final class MainController {
 
 	@FXML
 	public void handleSearchXSD(Event e) {
-		FileChooser fileChooser = new FileChooser();
-		fileChooser
-				.setInitialDirectory(new File(System.getProperty("user.dir")));
+		File file = getFileChooser("XSD files (*.xsd)", "*.xsd");
 
-		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
-				"XSD files (*.xsd)", "*.xsd");
-		fileChooser.getExtensionFilters().add(extFilter);
-
-		File file = fileChooser.showOpenDialog(null);
+		if (file != null) {
+			txtSourceSet.setText(file.getPath());
+			displayMessage("Loaded file: " + file.getPath());
+		}
 	}
 
 	@FXML
 	public void handleSearchXML(Event e) {
-		FileChooser fileChooser = new FileChooser();
+		File file = getFileChooser("XML files (*.xml)", "*.xml");
 
-		fileChooser
-		.setInitialDirectory(new File(System.getProperty("user.dir")));
-		
-		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
-				"XML files (*.xml)", "*.xml");
-		fileChooser.getExtensionFilters().add(extFilter);
-
-		File file = fileChooser.showOpenDialog(null);
-		
-		if(file != null) {
-			System.out.println("choosed");
-			
+		if (file != null) {
 			txtSourceSet.setText(file.getPath());
-			System.out.println(file);
+			displayMessage("Loaded file: " + file.getPath());
 		}
-		
 
 	}
 
@@ -566,5 +551,23 @@ public final class MainController {
 	@FXML
 	public void handleSetEn(Event e) {
 		Main.instance.loadView(new Locale("en", "EN"));
+	}
+
+	void displayMessage(String m) {
+		txtMessage.setText(m);
+	}
+
+	static File getFileChooser(String filter_description,
+			String filter_extension) {
+		FileChooser fileChooser = new FileChooser();
+
+		fileChooser
+				.setInitialDirectory(new File(System.getProperty("user.dir")));
+
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+				filter_description, filter_extension);
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		return fileChooser.showOpenDialog(Main.instance.getPrimaryStage());
 	}
 }
