@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tickets xmlns="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/ticketType" xmlns:ns2="https://raw.githubusercontent.com/nalet/bfh/master/bti7055p/LottoTool/tickets">
+    <ns2:ticket ticketId="0">
+        <plays>
+            <play playId="0">
+                <numbers>
+                    <number>1</number>
+                    <number>2</number>
+                    <number>3</number>
+                    <number>4</number>
+                    <number>5</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+            <play playId="1">
+                <numbers>
+                    <number>3</number>
+                    <number>21</number>
+                    <number>7</number>
+                    <number>49</number>
+                    <number>41</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+            <play playId="2">
+                <numbers>
+                    <number>15</number>
+                    <number>45</number>
+                    <number>4</number>
+                    <number>19</number>
+                    <number>20</number>
+                </numbers>
+                <stars>
+                    <star>8</star>
+                    <star>4</star>
+                </stars>
+            </play>
+        </plays>
+        <superStars>
+            <superStar selected="false" superStarId="0">12345</superStar>
+            <superStar selected="false" superStarId="1">N999J</superStar>
+            <superStar selected="true" superStarId="2">I478Q</superStar>
+            <superStar selected="false" superStarId="3">Z697X</superStar>
+        </superStars>
+        <validity>1</validity>
+        <drawn>0</drawn>
+        <timeStamp>
+            <year>2014</year>
+            <month>6</month>
+            <day>10</day>
+            <hour>19</hour>
+            <minute>54</minute>
+            <second>39</second>
+            <milSecond>917</milSecond>
+            <timeZoneOffset>2</timeZoneOffset>
+        </timeStamp>
+    </ns2:ticket>
+</ns2:tickets>
