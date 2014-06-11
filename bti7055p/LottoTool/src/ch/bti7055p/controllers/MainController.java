@@ -2,8 +2,6 @@ package ch.bti7055p.controllers;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -11,9 +9,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -23,8 +19,6 @@ import ch.bti7055p.main.Main;
 
 public final class MainController {
 
-	private List<I18NNodes> nodeList = new ArrayList<I18NNodes>();
-	
 	@FXML
 	private ResourceBundle resources;
 
@@ -92,16 +86,10 @@ public final class MainController {
 	private TextField txtYSS1MP6;
 
 	@FXML
-	private Label lblWinningNumbers;
-
-	@FXML
 	private TextField txtYSS1MP5;
 
 	@FXML
 	private TextField txtYSS1MP7;
-
-	@FXML
-	private Label lblYSN;
 
 	@FXML
 	private TextField txtYSS1MP2;
@@ -164,19 +152,10 @@ public final class MainController {
 	private TextField txtValSNMP7;
 
 	@FXML
-	private Label lblCurrWinSNr;
-
-	@FXML
-	private Button btnSearchXSD;
-
-	@FXML
 	private TextField txtCurWS;
 
 	@FXML
 	private TextField txtValSuperMP6;
-
-	@FXML
-	private Label lblWinningSuperStar;
 
 	@FXML
 	private TextField txtValSuperMP5;
@@ -221,16 +200,10 @@ public final class MainController {
 	private TextField txtYnr3MP6;
 
 	@FXML
-	private Button btnActSet;
-
-	@FXML
 	private TextField txtYSN1MP3;
 
 	@FXML
 	private TextField txtYSN1MP2;
-
-	@FXML
-	private Label lblCurWS;
 
 	@FXML
 	private TextField txtYSN1MP1;
@@ -251,16 +224,7 @@ public final class MainController {
 	private TextField txtCurWS2M;
 
 	@FXML
-	private Button btnEvalMul;
-
-	@FXML
-	private Label lblInfoSet;
-
-	@FXML
 	private HBox boxContent;
-
-	@FXML
-	private Label lblValSSP1;
 
 	@FXML
 	private Tab tpPlay3;
@@ -270,9 +234,6 @@ public final class MainController {
 
 	@FXML
 	private Tab tpPlay1;
-
-	@FXML
-	private Button btnEvalSing;
 
 	@FXML
 	private Tab tpPlay7;
@@ -323,9 +284,6 @@ public final class MainController {
 	private TextField txtCurWinNr1;
 
 	@FXML
-	private Label lblYnr;
-
-	@FXML
 	private TextField txtCurWinNr1M;
 
 	@FXML
@@ -350,7 +308,7 @@ public final class MainController {
 	private TextField txtYnr1MP4;
 
 	@FXML
-	private TextField txtOpenXML;
+	private TextField txtMessage;
 
 	@FXML
 	private TextField txtYnr1MP3;
@@ -362,9 +320,6 @@ public final class MainController {
 	private TextField txtYnr1MP5;
 
 	@FXML
-	private Label lblValSnr;
-
-	@FXML
 	private TextField txtYnr1MP7;
 
 	@FXML
@@ -372,9 +327,6 @@ public final class MainController {
 
 	@FXML
 	private ComboBox<String> comboTickets;
-
-	@FXML
-	private Button btnSearchMul;
 
 	@FXML
 	private TextField txtYnr4MP1;
@@ -410,9 +362,6 @@ public final class MainController {
 	private TextField txtYSS2MP6;
 
 	@FXML
-	private Button btnSearchSing;
-
-	@FXML
 	private TextField txtYSS2MP1;
 
 	@FXML
@@ -440,28 +389,13 @@ public final class MainController {
 	private TextField txtCurWinNr3M;
 
 	@FXML
-	private Label lblEvalSing;
-
-	@FXML
 	private TextField txtvalNr;
 
 	@FXML
 	private TextField txtYnr5;
 
 	@FXML
-	private Label lblOpenXML;
-
-	@FXML
-	private Label lblCurrWinNr;
-
-	@FXML
 	private TextField txtYSS3MP7;
-
-	@FXML
-	private Label lblWinningStarNumbers;
-
-	@FXML
-	private Label lblEvalMul;
 
 	@FXML
 	private TextField txtYSS3MP5;
@@ -471,9 +405,6 @@ public final class MainController {
 
 	@FXML
 	private Tab tabSettings;
-
-	@FXML
-	private Label lblValSuper;
 
 	@FXML
 	private TextField txtYSS3MP3;
@@ -488,16 +419,10 @@ public final class MainController {
 	private TextField txtYSS3MP2;
 
 	@FXML
-	private Label lblYSS;
-
-	@FXML
 	private TextField txtCurWinNr2M;
 
 	@FXML
 	private TextField txtYnr2MP1;
-
-	@FXML
-	private Label lblEvalDay;
 
 	@FXML
 	private TextField txtYnr2MP3;
@@ -557,22 +482,10 @@ public final class MainController {
 	private TextField txtYSN2MP5;
 
 	@FXML
-	private Label lblValNr;
-
-	@FXML
 	private TextField txtCurWS1;
 
 	@FXML
 	private TextField txtCurWS2;
-
-	@FXML
-	private Button btnDE;
-
-	@FXML
-	private Button btnEN;
-
-	@FXML
-	private Button btnClose;
 
 	@FXML
 	void close(ActionEvent event) {
@@ -609,75 +522,40 @@ public final class MainController {
 
 	}
 
-	// This method is called by the FXMLLoader when initialization is complete
-	void initialize() {
-
-		nodeList.add(new I18NNodes(btnClose, "btnClose"));
-		nodeList.add(new I18NNodes(btnDE, "btnDE"));
-		nodeList.add(new I18NNodes(btnEN, "btnEN"));
-		// nodeList.add(new I18NNodes(tabSettings,"tabSettings"));
-		nodeList.add(new I18NNodes(lblInfoSet, "lblInfoSet"));
-		nodeList.add(new I18NNodes(btnSearchXSD, "btnSearchXSD"));
-		nodeList.add(new I18NNodes(btnActSet, "btnActSet"));
-		nodeList.add(new I18NNodes(lblWinningNumbers, "lblWinningNumbers"));
-		nodeList.add(new I18NNodes(lblWinningSuperStar, "lblWinningSuperStar"));
-		nodeList.add(new I18NNodes(lblWinningStarNumbers,
-				"lblWinningStarNumbers"));
-		nodeList.add(new I18NNodes(lblEvalDay, "lblEvalDay"));
-		// nodeList.add(new I18NNodes(tabSingle,"tabSingle"));
-		nodeList.add(new I18NNodes(lblValSuper, "lblValSuper"));
-		nodeList.add(new I18NNodes(lblValSnr, "lblValSnr"));
-		nodeList.add(new I18NNodes(lblValNr, "lblValNr"));
-		nodeList.add(new I18NNodes(lblCurWS, "lblCurWS"));
-		nodeList.add(new I18NNodes(lblCurrWinSNr, "lblCurrWinSNr"));
-		nodeList.add(new I18NNodes(lblCurrWinNr, "lblCurrWinNr"));
-		nodeList.add(new I18NNodes(lblYSS, "lblYSS"));
-		nodeList.add(new I18NNodes(lblYSN, "lblYSN"));
-		nodeList.add(new I18NNodes(lblYnr, "lblYnr"));
-		nodeList.add(new I18NNodes(lblEvalSing, "lblEvalSing"));
-		nodeList.add(new I18NNodes(btnSearchSing, "btnSearchSing"));
-		nodeList.add(new I18NNodes(btnEvalSing, "btnEvalSing"));
-		// nodeList.add(new I18NNodes(tabMultiple,"tabMultiple"));
-		nodeList.add(new I18NNodes(lblEvalMul, "lblEvalMul"));
-		nodeList.add(new I18NNodes(btnSearchMul, "btnSearchMul"));
-		nodeList.add(new I18NNodes(btnEvalMul, "btnEvalMul"));
-		nodeList.add(new I18NNodes(tpPaneDrawings, "tpPaneDrawings"));
-		// nodeList.add(new I18NNodes(tpPlay1,"tpPlay1"));
-		// nodeList.add(new I18NNodes(tpPlay2,"tpPlay2"));
-		// nodeList.add(new I18NNodes(tpPlay3,"tpPlay3"));
-		// nodeList.add(new I18NNodes(tpPlay4,"tpPlay4"));
-		// nodeList.add(new I18NNodes(tpPlay5,"tpPlay5"));
-		// nodeList.add(new I18NNodes(tpPlay6,"tpPlay6"));
-		// nodeList.add(new I18NNodes(tpPlay7,"tpPlay7"));
-		nodeList.add(new I18NNodes(lblOpenXML, "lblOpenXML"));
-
-		// Locale locale = new Locale("en", "EN");
-		// Helper.applyI18N("lang", locale, nodeList);
-
-	}
-
 	@FXML
 	public void handleSearchXSD(Event e) {
 		FileChooser fileChooser = new FileChooser();
+		fileChooser
+				.setInitialDirectory(new File(System.getProperty("user.dir")));
 
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
 				"XSD files (*.xsd)", "*.xsd");
 		fileChooser.getExtensionFilters().add(extFilter);
 
 		File file = fileChooser.showOpenDialog(null);
-		System.out.println(file);
 	}
 
 	@FXML
 	public void handleSearchXML(Event e) {
 		FileChooser fileChooser = new FileChooser();
 
+		fileChooser
+		.setInitialDirectory(new File(System.getProperty("user.dir")));
+		
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
 				"XML files (*.xml)", "*.xml");
 		fileChooser.getExtensionFilters().add(extFilter);
 
 		File file = fileChooser.showOpenDialog(null);
-		System.out.println(file);
+		
+		if(file != null) {
+			System.out.println("choosed");
+			
+			txtSourceSet.setText(file.getPath());
+			System.out.println(file);
+		}
+		
+
 	}
 
 	@FXML
