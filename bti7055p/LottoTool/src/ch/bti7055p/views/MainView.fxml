@@ -198,22 +198,22 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblYSS" fx:id="lblYSS" text="%lblYSS" />
-																<TextField fx:id="txtYSS1" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtYSS1" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="19.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYSS2" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtYSS2" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYSS3" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtYSS3" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYSS4" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtYSS4" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -226,8 +226,8 @@
 														<HBox prefHeight="30.0" prefWidth="560.0">
 															<children>
 																<Label id="lblYSN" fx:id="lblYSN" text="%lblYSN" />
-																<TextField fx:id="txtYSN1" prefHeight="25.0" prefWidth="35.0" />
-																<TextField fx:id="txtYSN2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYSN1" editable="false" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtYSN2" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -237,27 +237,27 @@
 														<HBox prefHeight="30.0" prefWidth="560.0">
 															<children>
 																<Label id="lblYnr" fx:id="lblYnr" text="%lblYnr" />
-																<TextField fx:id="txtYnr1" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYnr1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="23.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYnr2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYnr2" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYnr3" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYnr3" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYnr4" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYnr4" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtYnr5" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtYnr5" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -267,7 +267,7 @@
 														<HBox prefHeight="30.0" prefWidth="571.0">
 															<children>
 																<Label id="lblEvalSing" fx:id="lblEvalSing" text="%lblEvalSing" />
-																<TextField fx:id="txtSourceSing">
+																<TextField fx:id="txtSourceSing" editable="false">
 																	<HBox.margin>
 																		<Insets left="22.0" />
 																	</HBox.margin>
@@ -386,7 +386,7 @@
 																								<HBox prefHeight="30.0" prefWidth="571.0">
 																									<children>
 																										<Label id="lblValSuper" fx:id="lblValSuper" text="%lblValSuper" />
-																										<TextField fx:id="txtValSuperMP1" prefWidth="35.0">
+																										<TextField fx:id="txtValSuperMP1" editable="false" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="15.0" />
 																											</HBox.margin>
@@ -396,7 +396,7 @@
 																								<HBox prefHeight="30.0" prefWidth="571.0">
 																									<children>
 																										<Label id="lblValSnr" fx:id="lblValSnr" text="%lblValSnr" />
-																										<TextField fx:id="txtValSNMP1" prefWidth="35.0">
+																										<TextField fx:id="txtValSNMP1" editable="false" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
@@ -406,7 +406,7 @@
 																								<HBox prefHeight="30.0" prefWidth="571.0">
 																									<children>
 																										<Label id="lblValNr" fx:id="lblValNr" text="%lblValNr" />
-																										<TextField fx:id="txtValNrMP1" prefWidth="35.0">
+																										<TextField fx:id="txtValNrMP1" editable="false" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="28.0" />
 																											</HBox.margin>
@@ -416,22 +416,22 @@
 																								<HBox prefHeight="30.0" prefWidth="559.0">
 																									<children>
 																										<Label id="lblYSS" fx:id="lblYSS" text="%lblYSS" />
-																										<TextField fx:id="txtYSS1MP1" prefHeight="25.0" prefWidth="81.0">
+																										<TextField fx:id="txtYSS1MP1" editable="false" prefHeight="25.0" prefWidth="81.0">
 																											<HBox.margin>
 																												<Insets left="19.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYSS2MP1" prefHeight="25.0" prefWidth="81.0">
+																										<TextField fx:id="txtYSS2MP1" editable="false" prefHeight="25.0" prefWidth="81.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYSS3MP1" prefHeight="25.0" prefWidth="81.0">
+																										<TextField fx:id="txtYSS3MP1" editable="false" prefHeight="25.0" prefWidth="81.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYSS4MP1" prefHeight="25.0" prefWidth="81.0">
+																										<TextField fx:id="txtYSS4MP1" editable="false" prefHeight="25.0" prefWidth="81.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
@@ -444,8 +444,8 @@
 																								<HBox prefHeight="30.0" prefWidth="560.0">
 																									<children>
 																										<Label id="lblYSN" fx:id="lblYSN" text="%lblYSN" />
-																										<TextField fx:id="txtYSN1MP1" prefHeight="25.0" prefWidth="35.0" />
-																										<TextField fx:id="txtYSN2MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYSN1MP1" editable="false" prefHeight="25.0" prefWidth="35.0" />
+																										<TextField fx:id="txtYSN2MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
@@ -455,27 +455,27 @@
 																								<HBox prefHeight="30.0" prefWidth="560.0">
 																									<children>
 																										<Label id="lblYnr" fx:id="lblYnr" text="%lblYnr" />
-																										<TextField fx:id="txtYnr1MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYnr1MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="23.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYnr2MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYnr2MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYnr3MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYnr3MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYnr4MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYnr4MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>
 																										</TextField>
-																										<TextField fx:id="txtYnr5MP1" prefHeight="25.0" prefWidth="35.0">
+																										<TextField fx:id="txtYnr5MP1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																											<HBox.margin>
 																												<Insets left="10.0" />
 																											</HBox.margin>

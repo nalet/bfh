@@ -1,10 +1,16 @@
 package ch.bti7055p.controllers;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.RestoreAction;
 
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -20,9 +26,12 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
+import ch.bti7055p.calculations.Calculate;
+import ch.bti7055p.calculations.Calculate.Result;
+import ch.bti7055p.calculations.Calculate.Settings;
 import ch.bti7055p.main.Main;
 
-public final class MainController implements Initializable{
+public final class MainController implements Initializable {
 
 	@FXML
 	private ResourceBundle resources;
@@ -464,16 +473,15 @@ public final class MainController implements Initializable{
 
 	@FXML
 	private TextField txtCurWS2;
-	
+
 	@FXML
 	private TabPane mainTab;
-	
 
 	@FXML
 	void close(ActionEvent event) {
 		Platform.exit();
 	}
-	
+
 	@FXML
 	void actXSD(ActionEvent event) {
 
@@ -481,7 +489,46 @@ public final class MainController implements Initializable{
 
 	@FXML
 	void evalXML(ActionEvent event) {
+		Settings settings = getSettings();
+		
+		Calculate c = new Calculate(txtSourceSet.getText(), new String[]{txtSourceSing.getText()}, settings);
+		Result r = c.work();
+		
+		txtValSuper.setText(String.valueOf(r.valid_superstars));
+		txtValSnr.setText(String.valueOf(r.valid_star_numbers));
+		txtvalNr.setText(String.valueOf(r.valid_numbers));
+		
+		txtYSS1.setText(r.your_super_star_1);
+		txtYSS2.setText(r.your_super_star_2);
+		txtYSS3.setText(r.your_super_star_3);
+		txtYSS4.setText(r.your_super_star_4);
+		
+		txtYSN1.setText(String.valueOf(r.your_star_number_1));
+		txtYSN2.setText(String.valueOf(r.your_star_number_2));
+		
+		txtYnr1.setText(String.valueOf(r.your_numbers_1));
+		txtYnr2.setText(String.valueOf(r.your_numbers_2));
+		txtYnr3.setText(String.valueOf(r.your_numbers_3));
+		txtYnr4.setText(String.valueOf(r.your_numbers_4));
+		txtYnr5.setText(String.valueOf(r.your_numbers_5));
+		
+	}
 
+	private Settings getSettings() {
+		Settings s = new Settings();
+		
+		s.super_star = txtWST.getText();
+		
+		s.number_1 = Integer.parseInt(txtWnr1.getText());
+		s.number_2 = Integer.parseInt(txtWnr2.getText());
+		s.number_3 = Integer.parseInt(txtWnr3.getText());
+		s.number_4 = Integer.parseInt(txtWnr4.getText());
+		s.number_5 = Integer.parseInt(txtWnr5.getText());
+		
+		s.star_1 = Integer.parseInt(txtWSnr1.getText());
+		s.star_2 = Integer.parseInt(txtWSnr2.getText());
+		
+		return s;
 	}
 
 	@FXML
@@ -509,7 +556,7 @@ public final class MainController implements Initializable{
 		File file = getFileChooser("XML files (*.xml)", "*.xml");
 
 		if (file != null) {
-			txtSourceSet.setText(file.getPath());
+			txtSourceSing.setText(file.getPath());
 			displayMessage("Loaded file: " + file.getPath());
 		}
 
@@ -545,31 +592,85 @@ public final class MainController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		mainTab.getSelectionModel().selectedItemProperty().addListener(
-			    new ChangeListener<Tab>() {
-			        @Override
-			        public void changed(ObservableValue<? extends Tab> ov, Tab t, Tab t1) {
-			            txtCurWS.setText(txtWST.getText());
-			            txtCurWinNr1.setText(txtWnr1.getText());
-			            txtCurWinNr2.setText(txtWnr2.getText());
-			            txtCurWinNr3.setText(txtWnr3.getText());
-			            txtCurWinNr4.setText(txtWnr4.getText());
-			            txtCurWinNr5.setText(txtWnr5.getText());
-			            txtCurWS1.setText(txtWSnr1.getText());
-			            txtCurWS2.setText(txtWSnr2.getText());
-			            
-			            txtCurWSM.setText(txtWST.getText());
-			            txtCurWinNr1M.setText(txtWnr1.getText());
-			            txtCurWinNr2M.setText(txtWnr2.getText());
-			            txtCurWinNr3M.setText(txtWnr3.getText());
-			            txtCurWinNr4M.setText(txtWnr4.getText());
-			            txtCurWinNr5M.setText(txtWnr5.getText());
-			            txtCurWS1M.setText(txtWSnr1.getText());
-			            txtCurWS2M.setText(txtWSnr2.getText());
-			        }
-			    }
-			);
-		
+		mainTab.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<Tab>() {
+					@Override
+					public void changed(ObservableValue<? extends Tab> ov,
+							Tab t, Tab t1) {
+						txtCurWS.setText(txtWST.getText());
+						txtCurWinNr1.setText(txtWnr1.getText());
+						txtCurWinNr2.setText(txtWnr2.getText());
+						txtCurWinNr3.setText(txtWnr3.getText());
+						txtCurWinNr4.setText(txtWnr4.getText());
+						txtCurWinNr5.setText(txtWnr5.getText());
+						txtCurWS1.setText(txtWSnr1.getText());
+						txtCurWS2.setText(txtWSnr2.getText());
+
+						txtCurWSM.setText(txtWST.getText());
+						txtCurWinNr1M.setText(txtWnr1.getText());
+						txtCurWinNr2M.setText(txtWnr2.getText());
+						txtCurWinNr3M.setText(txtWnr3.getText());
+						txtCurWinNr4M.setText(txtWnr4.getText());
+						txtCurWinNr5M.setText(txtWnr5.getText());
+						txtCurWS1M.setText(txtWSnr1.getText());
+						txtCurWS2M.setText(txtWSnr2.getText());
+					}
+				});
+
 		dpEvalDay.setValue(LocalDate.now());
+		readINIFile();
+		Runtime.getRuntime().addShutdownHook(new Thread() {
+			@Override
+			public void run() {
+				saveINIFile();
+				super.run();
+			}
+		});
 	}
+
+	private void saveINIFile() {
+		try {
+			Properties props = new Properties();
+
+			try {
+				props.load(new FileInputStream(System.getProperty("user.dir")
+						+ "\\" + "settings.ini"));
+			} catch (FileNotFoundException e) {
+
+			}
+
+			props.setProperty("xsd_location", txtSourceSet.getText());
+
+			props.store(new FileOutputStream(System.getProperty("user.dir")
+					+ "\\" + "settings.ini", true), "LottoTool Settings");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	private void readINIFile() {
+
+		try {
+			final Properties props = new Properties();
+			// loading the .ini file under ini folder
+			props.load(new FileInputStream(System.getProperty("user.dir")
+					+ "\\" + "settings.ini"));
+			
+			Platform.runLater(new Runnable() {
+				
+				@Override
+				public void run() {
+					txtSourceSet.setText(props.getProperty("xsd_location"));
+					
+				}
+			});
+			
+			
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
 }
