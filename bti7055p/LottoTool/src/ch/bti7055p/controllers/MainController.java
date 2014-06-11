@@ -2,14 +2,19 @@ package ch.bti7055p.controllers;
 
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -17,7 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import ch.bti7055p.main.Main;
 
-public final class MainController {
+public final class MainController implements Initializable{
 
 	@FXML
 	private ResourceBundle resources;
@@ -227,28 +232,7 @@ public final class MainController {
 	private HBox boxContent;
 
 	@FXML
-	private Tab tpPlay3;
-
-	@FXML
-	private Tab tpPlay2;
-
-	@FXML
-	private Tab tpPlay1;
-
-	@FXML
-	private Tab tpPlay7;
-
-	@FXML
-	private Tab tpPlay6;
-
-	@FXML
-	private Tab tpPlay5;
-
-	@FXML
 	private TextField txtValSuper;
-
-	@FXML
-	private Tab tpPlay4;
 
 	@FXML
 	private TextField txtYSS4MP6;
@@ -287,7 +271,7 @@ public final class MainController {
 	private TextField txtCurWinNr1M;
 
 	@FXML
-	private TextField txtEvalDay;
+	private DatePicker dpEvalDay;
 
 	@FXML
 	private TextField txtCurWinNr5;
@@ -368,9 +352,6 @@ public final class MainController {
 	private TextField txtYSS2MP3;
 
 	@FXML
-	private Tab tabMultiple;
-
-	@FXML
 	private TextField txtYSS2MP2;
 
 	@FXML
@@ -402,9 +383,6 @@ public final class MainController {
 
 	@FXML
 	private TextField txtYSS3MP6;
-
-	@FXML
-	private Tab tabSettings;
 
 	@FXML
 	private TextField txtYSS3MP3;
@@ -486,24 +464,18 @@ public final class MainController {
 
 	@FXML
 	private TextField txtCurWS2;
+	
+	@FXML
+	private TabPane mainTab;
+	
 
 	@FXML
 	void close(ActionEvent event) {
 		Platform.exit();
 	}
-
-	@FXML
-	void searchXSD(ActionEvent event) {
-
-	}
-
+	
 	@FXML
 	void actXSD(ActionEvent event) {
-
-	}
-
-	@FXML
-	void searchXML(ActionEvent event) {
 
 	}
 
@@ -569,5 +541,35 @@ public final class MainController {
 		fileChooser.getExtensionFilters().add(extFilter);
 
 		return fileChooser.showOpenDialog(Main.instance.getPrimaryStage());
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		mainTab.getSelectionModel().selectedItemProperty().addListener(
+			    new ChangeListener<Tab>() {
+			        @Override
+			        public void changed(ObservableValue<? extends Tab> ov, Tab t, Tab t1) {
+			            txtCurWS.setText(txtWST.getText());
+			            txtCurWinNr1.setText(txtWnr1.getText());
+			            txtCurWinNr2.setText(txtWnr2.getText());
+			            txtCurWinNr3.setText(txtWnr3.getText());
+			            txtCurWinNr4.setText(txtWnr4.getText());
+			            txtCurWinNr5.setText(txtWnr5.getText());
+			            txtCurWS1.setText(txtWSnr1.getText());
+			            txtCurWS2.setText(txtWSnr2.getText());
+			            
+			            txtCurWSM.setText(txtWST.getText());
+			            txtCurWinNr1M.setText(txtWnr1.getText());
+			            txtCurWinNr2M.setText(txtWnr2.getText());
+			            txtCurWinNr3M.setText(txtWnr3.getText());
+			            txtCurWinNr4M.setText(txtWnr4.getText());
+			            txtCurWinNr5M.setText(txtWnr5.getText());
+			            txtCurWS1M.setText(txtWSnr1.getText());
+			            txtCurWS2M.setText(txtWSnr2.getText());
+			        }
+			    }
+			);
+		
+		dpEvalDay.setValue(LocalDate.now());
 	}
 }

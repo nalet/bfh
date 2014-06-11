@@ -11,7 +11,7 @@
 			<children>
 				<HBox fx:id="boxContent" layoutX="14.0" layoutY="52.0" prefHeight="517.0" prefWidth="868.0">
 					<children>
-						<TabPane prefHeight="517.0" prefWidth="868.0" tabClosingPolicy="UNAVAILABLE">
+						<TabPane fx:id="mainTab" prefHeight="517.0" prefWidth="868.0" tabClosingPolicy="UNAVAILABLE">
 							<tabs>
 								<Tab id="tabSettings" fx:id="tabSettings" text="%tabSettings">
 									<content>
@@ -42,27 +42,27 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblWinningNumbers" fx:id="lblWinningNumbers" text="%lblWinningNumbers" />
-																<TextField fx:id="txtWnr1" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWnr1" prefHeight="25.0" prefWidth="35.0" text="1">
 																	<HBox.margin>
 																		<Insets left="23.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtWnr2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWnr2" prefHeight="25.0" prefWidth="35.0" text="2">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtWnr3" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWnr3" prefHeight="25.0" prefWidth="35.0" text="3">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtWnr4" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWnr4" prefHeight="25.0" prefWidth="35.0" text="4">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtWnr5" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWnr5" prefHeight="25.0" prefWidth="35.0" text="5">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -75,7 +75,7 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblWinningSuperStar" fx:id="lblWinningSuperStar" text="%lblWinningSuperStar" />
-																<TextField fx:id="txtWST" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtWST" prefHeight="25.0" prefWidth="81.0" text="12345">
 																	<HBox.margin>
 																		<Insets left="19.0" />
 																	</HBox.margin>
@@ -85,8 +85,8 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblWinningStarNumbers" fx:id="lblWinningStarNumbers" text="%lblWinningStarNumbers" />
-																<TextField fx:id="txtWSnr1" prefHeight="25.0" prefWidth="35.0" />
-																<TextField fx:id="txtWSnr2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtWSnr1" prefHeight="25.0" prefWidth="35.0" text="1" />
+																<TextField fx:id="txtWSnr2" prefHeight="25.0" prefWidth="35.0" text="2">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -96,7 +96,7 @@
 														<HBox prefHeight="43.0" prefWidth="571.0">
 															<children>
 																<Label id="lblEvalDay" fx:id="lblEvalDay" text="%lblEvalDay" />
-																<TextField fx:id="txtEvalDay" />
+                                                				<DatePicker fx:id="dpEvalDay" />
 															</children>
 														</HBox>
 													</children>
@@ -144,7 +144,7 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblCurWS" fx:id="lblCurWS" text="%lblCurWS" />
-																<TextField fx:id="txtCurWS" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtCurWS" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="19.0" />
 																	</HBox.margin>
@@ -157,8 +157,8 @@
 														<HBox prefHeight="30.0" prefWidth="571.0">
 															<children>
 																<Label id="lblCurrWinSNr" fx:id="lblCurrWinSNr" text="%lblCurrWinSNr" />
-																<TextField fx:id="txtCurWS1" prefHeight="25.0" prefWidth="35.0" />
-																<TextField fx:id="txtCurWS2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWS1" editable="false" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtCurWS2" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -168,27 +168,27 @@
 														<HBox prefHeight="30.0" prefWidth="560.0">
 															<children>
 																<Label id="lblCurrWinNr" fx:id="lblCurrWinNr" text="%lblCurrWinNr" />
-																<TextField fx:id="txtCurWinNr1" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr1" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="23.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr2" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr2" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr3" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr3" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr4" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr4" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr5" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr5" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -322,7 +322,7 @@
 														<HBox prefHeight="30.0" prefWidth="559.0">
 															<children>
 																<Label id="lblCurWS" fx:id="lblCurWS" text="%lblCurWS" />
-																<TextField fx:id="txtCurWSM" prefHeight="25.0" prefWidth="81.0">
+																<TextField fx:id="txtCurWSM" editable="false" prefHeight="25.0" prefWidth="81.0">
 																	<HBox.margin>
 																		<Insets left="19.0" />
 																	</HBox.margin>
@@ -332,8 +332,8 @@
 														<HBox prefHeight="30.0" prefWidth="560.0">
 															<children>
 																<Label id="lblCurrWinSNr" fx:id="lblCurrWinSNr" text="%lblCurrWinSNr" />
-																<TextField fx:id="txtCurWS1M" prefHeight="25.0" prefWidth="35.0" />
-																<TextField fx:id="txtCurWS2M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWS1M" editable="false" prefHeight="25.0" prefWidth="35.0" />
+																<TextField fx:id="txtCurWS2M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -343,27 +343,27 @@
 														<HBox prefHeight="30.0" prefWidth="560.0">
 															<children>
 																<Label id="lblCurrWinNr" fx:id="lblCurrWinNr" text="%lblCurrWinNr" />
-																<TextField fx:id="txtCurWinNr1M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr1M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="23.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr2M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr2M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr3M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr3M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr4M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr4M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
 																</TextField>
-																<TextField fx:id="txtCurWinNr5M" prefHeight="25.0" prefWidth="35.0">
+																<TextField fx:id="txtCurWinNr5M" editable="false" prefHeight="25.0" prefWidth="35.0">
 																	<HBox.margin>
 																		<Insets left="10.0" />
 																	</HBox.margin>
@@ -1177,7 +1177,7 @@
 				<HBox layoutX="14.0" layoutY="514.0" prefHeight="155.0" prefWidth="690.0">
 					<children>
 						<Label id="lblMessage" fx:id="lblMessage" text="%lblMessage" />
-						<TextField id="txtMessage" fx:id="txtMessage" prefHeight="25.0" prefWidth="599.0" editable="false">
+						<TextField id="txtMessage" fx:id="txtMessage" editable="false" prefHeight="25.0" prefWidth="599.0">
 							<HBox.margin>
 								<Insets left="10.0" />
 							</HBox.margin>
